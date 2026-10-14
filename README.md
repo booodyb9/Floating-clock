@@ -1,11 +1,58 @@
-<div align="center">
+# 3D Floating Clock | ساعة 3D العائمة ⏰✨
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+تطبيق أندرويد فاخر لساعة عائمة ثلاثية الأبعاد (3D Floating Clock) مبني باستخدام **Kotlin** و **Jetpack Compose** بأعلى معايير التصميم المعماري والأناقة.
 
-  <h1>Built with AI Studio</h2>
+---
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 🌟 المميزات الرئيسية (Key Features)
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+- **استوديو الساعة 3D التفاعلي (3D Studio)**:
+  - تفاعل كامل مع إمالة وتدوير الساعة في الفضاء ثلاثي الأبعاد (Pitch & Roll).
+  - محاكاة انعكاسات ضوئية حقيقية على الزجاج المعماري (Specular Glare) وظلال ديناميكية تسقطها العقارب على قرص الساعة.
+  - حركة طفو وانسياب هادئة (Ambient Breathing).
 
-</div>
+- **تخصيص الألوان المتقدم ولوحة الألوان السريعة**:
+  - لوحة ألوان سريعة (Quick Color Palette) بنقرة واحدة للعقارب والخلفية.
+  - تخصيص مستقل لكل عقرب (الساعات، الدقائق، الثواني) أو تلوين الكل معاً.
+  - تخصيص كامل للخلفية (تدرجات لونية، شفافية الزجاج، ولون توهج الإطار).
+  - أنماط فاخرة جاهزة بلمسة واحدة: ذهب الرياض الملكي، أزرق الزجاج البلوري، الزمرد الفاخر، والذهب الوردي.
+
+- **النافذة العائمة فوق التطبيقات (Floating Clock Overlay)**:
+  - دعم الظهور فوق أي تطبيق آخر عبر `SYSTEM_ALERT_WINDOW` مع سحب حر وتصغير إلى فقاعة زجاجية أنيقة.
+  - وضع الساعة العائمة التفاعلية داخل التطبيق للتنقل الفوري.
+
+- **أدوات الوقت المتعددة**:
+  - ساعة إيقاف 3D دقيقة مع تسجيل الدورات (Laps).
+  - مؤقت تركيز وإنتاجية (بومودورو) بحلقة مضيئة.
+  - وضع السرير الليلي (AMOLED Nightstand Mode).
+  - الساعة العالمية للمدن الكبرى (الرياض، مكة المكرمة، دبي، القاهرة، لندن، نيويورك، طوكيو).
+  - دعم ثنائي كامل للغتين العربية والإنجليزية.
+
+---
+
+## 🚀 البناء التلقائي عبر GitHub Actions (Automated CI/CD)
+
+تم تجهيز المشروع بملف سير العمل التلقائي:
+`.github/workflows/android-build.yml`
+
+### كيف يعمل البناء على GitHub؟
+1. بمجرد رفع الكود إلى مستودع GitHub (Push to `main` أو `master`):
+   - يبدأ GitHub Actions تلقائياً بتثبيت JDK و Gradle.
+   - تشغيل اختبارات الوحدة (Robolectric Unit Tests).
+   - بناء ملف الـ APK النهائي (`assembleDebug`).
+2. يمكنك تحميل ملف الـ APK الجاهز مباشرة من تبويب **Actions** في صفحة المشروع على GitHub تحت قسم **Artifacts** باسم `3D-Floating-Clock-Debug-APK`.
+3. يمكنك أيضاً تشغيل البناء يدوياً في أي وقت عبر الضغط على زر **"Run workflow"** في GitHub.
+
+---
+
+## 🛠️ البناء المحلي (Local Build)
+
+```bash
+# تشغيل الاختبارات
+gradle :app:testDebugUnitTest
+
+# بناء حزمة APK
+gradle :app:assembleDebug
+```
+ملف الـ APK الناتج سيكون في المسار:
+`app/build/outputs/apk/debug/app-debug.apk`

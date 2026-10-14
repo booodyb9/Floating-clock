@@ -1,0 +1,6 @@
+{
+  "name": "3D Floating Clock",
+  "description": "تطبيق ساعة عائمة ثلاثية الأبعاد فاخرة مع تخصيص كامل لألوان العقارب والخلفيات ولوحة ألوان غنية ونافذة عائمة فوق التطبيقات",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
