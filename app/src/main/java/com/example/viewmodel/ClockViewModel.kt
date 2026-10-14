@@ -83,11 +83,11 @@ class ClockViewModel(application: Application) : AndroidViewModel(application) {
 
                 // Formatted Time
                 val hourFormat = if (_settings.value.is24Hour) "HH:mm:ss" else "hh:mm:ss a"
-                val timeSdf = SimpleDateFormat(hourFormat, if (_isArabic.value) Locale("ar") else Locale.US)
+                val timeSdf = SimpleDateFormat(hourFormat, if (_isArabic.value) Locale.forLanguageTag("ar") else Locale.US)
                 _digitalTimeText.value = timeSdf.format(cal.time)
 
                 // Gregorian Date
-                val dateSdf = SimpleDateFormat("EEEE, d MMMM yyyy", if (_isArabic.value) Locale("ar") else Locale.US)
+                val dateSdf = SimpleDateFormat("EEEE, d MMMM yyyy", if (_isArabic.value) Locale.forLanguageTag("ar") else Locale.US)
                 _gregorianDateText.value = dateSdf.format(cal.time)
 
                 // Approximate Hijri representation
@@ -226,7 +226,7 @@ class ClockViewModel(application: Application) : AndroidViewModel(application) {
     fun getCityFormattedTime(city: WorldCity): String {
         val cal = Calendar.getInstance(city.timeZone)
         val hourFormat = if (_settings.value.is24Hour) "HH:mm" else "hh:mm a"
-        val sdf = SimpleDateFormat(hourFormat, if (_isArabic.value) Locale("ar") else Locale.US)
+        val sdf = SimpleDateFormat(hourFormat, if (_isArabic.value) Locale.forLanguageTag("ar") else Locale.US)
         sdf.timeZone = city.timeZone
         return sdf.format(cal.time)
     }
